@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Amp Quest</title>
+</head>
+
+<body>
+
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+
+    <h3 style="text-align: center;">Create Your Account</h3>
+
+    <form method="POST" style="text-align: center;">
+        {{ template_form.hidden_tag() }}
+        <p>
+            {{ template_form.username(size=32, placeholder="Username") }}
+        </p>
+        <p>
+            {{ template_form.email(size=32, placeholder="E-mail") }}
+        </p>
+        <p>
+            {{ template_form.password(size=32, placeholder="Password") }}
+        </p>
+        <p>
+            {{ template_form.password2(size=32,placeholder="Re-Enter Password") }}
+        </p>
+        <p>
+            {{ template_form.submit }}
+        </p>
+    
+    </form>
+
+</body>
+
+{% endblock %}

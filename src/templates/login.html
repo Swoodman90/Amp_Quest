@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Amp Quest</title>
+</head>
+
+<body>
+
+    <br>
+
+        {% for message in get_flashed_messages() %}
+
+    <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+        
+        {% endfor %}
+
+        <h3 style="text-align: center;">Login</h3>
+
+    <form style="text-align: center;" method="POST">
+        {{ template_form.hidden_tag() }}
+        <p>
+            {{ template_form.email(size=32, placeholder="E-mail") }}
+        </p>
+        <p>
+            {{ template_form.password(size=32, placeholder="Password") }}
+        </p>
+        <p>
+            {{ template_form.remember_me() }} {{ template_form.remember_me.label }}
+        </p>
+    
+        <p>
+            {{ template_form.submit }}
+        </p>
+    </form>
+
+</body>
+
+{% endblock %}

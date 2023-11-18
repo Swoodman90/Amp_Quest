@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body style="background: rgb(232, 229, 229);">
+
+    <div>
+        <a href="{{ url_for('index') }}">Home</a> &nbsp;
+        <a href="{{ url_for('audio') }}">Audio</a> &nbsp;
+        <a href="{{ url_for('register') }}">Sign Up</a> &nbsp;
+        <a href="{{ url_for('login') }}">Login</a> &nbsp;
+        <a href="{{ url_for('logout') }}">Logout</a> &nbsp;
+        <a href="{{ url_for('about') }}">About</a>
+    </div>
+
+</body>
+{% block content %}{% endblock %}

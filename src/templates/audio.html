@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio - Amp Quest</title>
+</head>
+
+<body>
+
+<br>
+
+    <div>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+    </div>
+
+    <h1 style="text-decoration: underline;">Audio Samples</h1>
+
+    <div>
+        <h3>Amplifier:</h3> <p>VHT Pittbull Hundred/CL</p>  
+        <h3>Cabinet & Speaker:</h3> <p>VHT Fat Bottom 4x12 with VHT P50E speakers</p>
+   
+        <audio controls src="{{ url_for('static', filename='audio/sample_audio.wav') }}" type="audio/wav">
+        </audio>
+    </div>
+<br>
+    <form method="POST">
+
+        {{ template_form.hidden_tag() }}
+        <p>
+            {{ template_form.comment.label() }}
+        </p>
+        <p>
+            {{ template_form.comment() }}
+        </p>
+        <p>
+            {{ template_form.submit() }}
+        </p>
+
+    </form>
+    <br>
+    
+    <div style="background-color: rgb(236, 231, 132);">
+
+    <h3 style="text-decoration: underline;">Comments</h3>
+    
+        {% for comment in comments %}
+        <ul>
+            {{ current_user.username }} says:
+            <li>{{ comment.text }} <br> <a href="{{ url_for('delete_comment', comment_id=comment.id)}}">Delete</a></li>
+        </ul>
+        {% endfor %}
+
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Amp Quest</title>
+</head>
+
+<body>
+    <br>
+    <div>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+    </div>
+    <h1 style="text-align: center; font-size: 60px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: azure; border: 4mm ridge gold; background-color: rgb(59, 59, 59);">Amp Quest</h1>
+    <h2 style="text-align: center;">The Guitarist's Archive for Amplifier and Cabinet Exploration</h2>
+
+    <h3 style="text-align: center;">Login To Explore Tonal Possibilities</h3>
+
+    <p style="text-align: center;">
+        <a href= "{{ url_for('login') }}">Login</a>
+    </p>
+
+    <p style="text-align: center;">
+        <a href= "{{ url_for('register') }}">Sign Up</a>
+    </p>
+
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='images/amp_pic.png') }}" style="border: ridge rgb(51, 51, 51);" height="auto", width="450">
+    </div>
+    <br>
+    <br>
+    <br>
+
+</body> 
+{% endblock %}
+
+
