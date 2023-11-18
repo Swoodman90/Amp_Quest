@@ -4,3 +4,10 @@ to play and try out in person. Having a resource for demonstrating the unique so
 to use in person.
 
 A user of this application will create an account, and be required to be logged in to access the 'Audio' page that provides the audio samples. Users can leave their thoughts about a particular sample in a 'Comments' section if they choose to.
+
+# Technology Used:
+Flask <br>
+HTML <br>
+Python <br>
+SQL <br>
+Werkzeug
